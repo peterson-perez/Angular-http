@@ -1,6 +1,6 @@
 # CursoAngular2
 
-In this project i'm going to make a angular crud using hhtp requests
+In this project i'm going to make a angular crud using http requests
 
 ## Development server
 
