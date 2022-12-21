@@ -1,1 +1,18 @@
-<p>addproduct works!</p>
+<p>Formulario de productos</p>
+
+
+<div class="form-container">
+    <form class="formulary" [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
+        <label>Nombre del producto</label>
+        <input type="text" formControlName="name">
+        <label>Descricion</label>
+        <input type="text" formControlName="description">
+        <label>Categoria</label>
+        <input type="text" formControlName="category">
+        <label>Disponiblidad</label>
+        <input type="number" formControlName="stock">
+        <label>Precio</label>
+        <input type="number" formControlName="price">
+        <input type="submit" value="Agregar" class="button" />
+    </form>
+</div>

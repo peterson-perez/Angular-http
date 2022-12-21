@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editproduct',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditproductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routes: Router) { }
 
   ngOnInit(): void {
+   
   }
+  
+  edit = () => {
+  this.routes.navigate(['/ProductTable'])
+}
 
 }
