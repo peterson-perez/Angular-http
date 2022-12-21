@@ -1,15 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddProductFormComponent } from './page/add-product-form/add-product-form.component';
+import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { EditproductComponent } from './components/editproduct/editproduct.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { ProductTableComponent } from './page/product-table/product-table.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo: 'HomePage', pathMatch:'full'},
-  {path:'HomePage', component:HomePageComponent},
-  {path:'AddProduct', component:AddProductFormComponent},
-  {path:'ProductTable', component:ProductTableComponent}
+  {
+    path: '',
+    redirectTo: 'HomePage',
+    pathMatch: 'full'
+  },
+  {
+    path: 'HomePage',
+    component: HomePageComponent
+  },
+  {
+    path: 'ProductTable',
+    component: ProductTableComponent
+  },
+  {
+    path: 'editProduct',
+    component: EditproductComponent
+  },
+  {
+    path: 'AddProduct',
+    component: AddproductComponent
+  }
 
 ];
 
@@ -18,4 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const Pages = [HomePageComponent, AddProductFormComponent, ProductTableComponent];
+export const Pages = [HomePageComponent, ProductTableComponent, EditproductComponent, AddproductComponent];
