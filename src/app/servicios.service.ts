@@ -17,11 +17,20 @@ export class ServiciosService {
    this.url = environment.urlApi
   }
 
+  // post
   postProduct(form: ProductI): Observable<ProductI>{
     return this.http.post<ProductI>('/api/Product', form)
   }
 
+
+  // get
   getProductAll(): Observable<ProductI[]>{
    return this.http.get<ProductI[]>("/api/ProductAll")
+  }
+
+  // delete
+
+  deleteProduct(id: number): Observable<ProductI[]>{
+    return this.http.delete<ProductI[]>('/api/ProductId' + id)
   }
 }
