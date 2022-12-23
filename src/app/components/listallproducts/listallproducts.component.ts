@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductI } from 'src/app/Models/ModelProduct';
+import { ProductI } from 'src/app/Models/ModelProductInt';
 import { ServiciosService } from 'src/app/servicios.service';
 
 @Component({
@@ -27,11 +27,11 @@ export class ListAllproductsComponent implements OnInit {
     this.routes.navigate(['/AddProduct'])
   }
 
-   edit = () => {
+   edit = (id: number) => {
     this.routes.navigate(['/editProduct'])
   }
 
-  delete = () => {
+  delete = (id: number) => {
 
   }
 
