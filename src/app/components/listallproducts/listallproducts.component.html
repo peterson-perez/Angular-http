@@ -19,8 +19,8 @@
             <td>{{product.category}}</td>
             <td>{{product.stock}}</td>
             <td>{{product.price}}</td>
-            <button (click)="edit()">Editar</button>
-            <button (click)="delete()">Eliminar</button>
+            <button (click)="edit(product.id)">Editar</button>
+            <button (click)="delete(product.id)">Eliminar</button>
         </tr>
     </tbody>
 </table>
