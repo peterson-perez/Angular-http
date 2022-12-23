@@ -15,7 +15,7 @@ export class EditproductComponent implements OnInit {
   }
   
   edit = () => {
-  this.routes.navigate(['/ProductTable'])
+  this.routes.navigate(['/Products'])
 }
 
 }
