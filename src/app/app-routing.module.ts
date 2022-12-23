@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { AddProductsComponent } from './components/addproduct/add-products-form.component';
 import { EditproductComponent } from './components/editproduct/editproduct.component';
+import { ListAllproductsComponent } from './components/listallproducts/listallproducts.component';
+import { ProductsFormComponent } from './page/add-product-form/products-form.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
-import { ProductTableComponent } from './page/product-table/product-table.component';
+import { ProductsComponent } from './page/product-table/products.component';
 
 
 const routes: Routes = [
@@ -17,8 +19,8 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'ProductTable',
-    component: ProductTableComponent
+    path: 'Products',
+    component: ProductsComponent
   },
   {
     path: 'editProduct',
@@ -26,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'AddProduct',
-    component: AddproductComponent
+    component: ProductsFormComponent
   }
 
 ];
@@ -36,4 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const Pages = [HomePageComponent, ProductTableComponent, EditproductComponent, AddproductComponent];
+export const Pages = [HomePageComponent, EditproductComponent, ListAllproductsComponent, ProductsComponent, AddProductsComponent, ProductsFormComponent];
