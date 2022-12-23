@@ -1,1 +1,26 @@
-<p>listallproducts works!</p>
+<p>Todos los productos</p>
+
+<button (click)="onSubmit()">Nuevo producto</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descricion</th>
+            <th>categoria</th>
+            <th>Disponiblidad</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.stock}}</td>
+            <td>{{product.price}}</td>
+            <button (click)="edit()">Editar</button>
+            <button (click)="delete()">Eliminar</button>
+        </tr>
+    </tbody>
+</table>
