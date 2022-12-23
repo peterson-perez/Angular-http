@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ProductI } from './Models/ModelProduct';
+import { ProductI } from './Models/ModelProductInt';
+import { Product } from './Models/ModelProduct';
 
 
 
@@ -18,7 +19,7 @@ export class ServiciosService {
   }
 
   // post
-  postProduct(form: ProductI): Observable<ProductI>{
+  postProduct(form: Product): Observable<ProductI>{
     return this.http.post<ProductI>('/api/Product', form)
   }
 
