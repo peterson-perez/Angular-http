@@ -1,0 +1,18 @@
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+    margin: 10px;
+}
+
+label{
+    margin-left: 10px;
+}
+
+.button{
+    width: 75px;
+    background-color: hsl(210, 100%, 50%);
+}
