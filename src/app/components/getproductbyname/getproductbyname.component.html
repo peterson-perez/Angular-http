@@ -1,0 +1,7 @@
+<p>getproductbyname works!</p>
+
+
+<form class="formulary" [formGroup]="inputName" (ngSubmit)="search(inputName.value)">
+    <input type="text" formControlName="name" placeholder="Nombre del producto">
+    <input type="submit" value="Buscar" class="button">
+</form>
