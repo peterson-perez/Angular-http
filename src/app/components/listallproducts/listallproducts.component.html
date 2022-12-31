@@ -1,26 +1,38 @@
 <p>Todos los productos</p>
-
+<app-getproductbyname></app-getproductbyname>
 <button (click)="onSubmit()">Nuevo producto</button>
 
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Descricion</th>
-            <th>categoria</th>
-            <th>Disponiblidad</th>
-            <th>Precio</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.category}}</td>
-            <td>{{product.stock}}</td>
-            <td>{{product.price}}</td>
-            <button (click)="edit(product.id)">Editar</button>
-            <button (click)="delete(product.id)">Eliminar</button>
-        </tr>
-    </tbody>
-</table>
+<div class="table-container">
+    <table summary="Lista de productos">
+        <caption>Lista de productos</caption>
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Disponibilidad</th>
+                <th scope="col">Precio</th>
+                <th scope="col">opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.name}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.stock}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button (click)="edit(product.id)" class="edit">Editar</button>
+                    <button (click)="delete(product.id)" class="delete">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Número total de productos</th>
+                <td colspan="4">{{lenghtProducts}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
