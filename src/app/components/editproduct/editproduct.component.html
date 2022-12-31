@@ -1,3 +1,15 @@
-<p>editproduct works!</p>
+<div>
+    <h3>Estas editando a {{product.name}}</h3>
+</div>
 
-<button (click)="edit()">Editar</button>
+<form [formGroup]="formEditProduct" (ngSubmit)="edit(productId, formEditProduct.value)">
+    <label>Nombre del producto</label>
+    <input type="text" formControlName="name">
+    <label>Descricion</label>
+    <input type="text" formControlName="description">
+    <label>Categoria</label>
+    <input type="text" formControlName="category">
+    <label>Disponiblidad</label>
+    <input type="number" formControlName="price">
+    <input type="submit" value="Editar" class="button">
+</form>
