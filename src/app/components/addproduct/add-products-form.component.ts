@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiciosService } from 'src/app/servicios.service';
 
@@ -29,7 +29,7 @@ export class AddProductsComponent implements OnInit {
 
   onSubmit = (form: any) => {
     this.service.postProduct(form).subscribe(error => {
-      this.routes.navigate(['/ProductTable'])
+      this.routes.navigate(['/Products'])
     })
   }
 
