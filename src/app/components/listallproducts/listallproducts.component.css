@@ -1,0 +1,54 @@
+
+
+.table-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 75%;
+    border-collapse: collapse;
+    border: 3px solid rgb(0, 115, 255);
+}
+
+table td {
+    text-align: center;
+}
+
+
+
+td th {
+    margin: 3px;
+    border: 3px rgb(0, 115, 255);
+}
+
+th {
+    color: white;
+    background-color: rgb(0, 115, 255);
+}
+
+button {
+    margin: 3px;
+}
+
+tr:hover{
+    background-color: #add8e6;
+}
+
+.edit{
+    width: 63px;
+    background-color: hsl(210, 100%, 50%);
+    border: 1px solid;
+    border-radius: 2px;
+}
+
+.delete{
+    width: 63;
+    width: 63px;
+    /* background-color: hsl(210, 100%, 50%); */
+    border: 1px solid;
+    border-radius: 2px;
+}
