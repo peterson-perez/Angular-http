@@ -1,15 +1,19 @@
-<div>
-    <h3>Estas editando a {{product.name}}</h3>
+<div class="titulo">
+    <h3>Estas editando a :<p>{{product.name}}</p></h3>
 </div>
 
-<form [formGroup]="formEditProduct" (ngSubmit)="edit(productId, formEditProduct.value)">
-    <label>Nombre del producto</label>
-    <input type="text" formControlName="name">
-    <label>Descricion</label>
-    <input type="text" formControlName="description">
-    <label>Categoria</label>
-    <input type="text" formControlName="category">
-    <label>Disponiblidad</label>
-    <input type="number" formControlName="price">
-    <input type="submit" value="Editar" class="button">
-</form>
+<div class="seccion">
+    <div class="form-container">
+        <form class="formulary" [formGroup]="formEditProduct" (ngSubmit)="edit(formEditProduct.value)">
+            <label class="text">Nombre del producto</label>
+            <input class="add-form-input" formControlName="name">
+            <label class="text">Descricion</label>
+            <input class="add-form-input" formControlName="description">
+            <label class="text">Categoria</label>
+            <input class="add-form-input" type="text" formControlName="category">
+            <label class="text">Precio</label>
+            <input class="add-form-input" type="number" formControlName="price">
+            <input type="submit" value="Editar" class="button">
+        </form>
+    </div>
+</div>
