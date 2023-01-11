@@ -1,10 +1,14 @@
-<p>Todos los productos</p>
-<app-getproductbyname></app-getproductbyname>
-<button (click)="onSubmit()">Nuevo producto</button>
+<p class="titulo">Todos los productos</p>
+
+<div class="seccion-1">
+    <app-getproductbyname class="button-get-product-by-name" (find)="onFind($event)">
+    </app-getproductbyname>
+
+    <button class="add-product" (click)="onSubmit()">Nuevo producto</button>
+</div>
 
 <div class="table-container">
     <table summary="Lista de productos">
-        <caption>Lista de productos</caption>
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -16,22 +20,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products">
-                <td>{{product.name}}</td>
-                <td>{{product.category}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.stock}}</td>
-                <td>{{product.price}}</td>
+            <tr class="td" *ngFor="let product of products">
+                <td (click)="watch(product.id)">{{product.name}}</td>
+                <td (click)="watch(product.id)">{{product.category}}</td>
+                <td (click)="watch(product.id)">{{product.description}}</td>
+                <td (click)="watch(product.id)">{{product.stock}}</td>
+                <td (click)="watch(product.id)">{{product.price}}</td>
                 <td>
-                    <button (click)="edit(product.id)" class="edit">Editar</button>
-                    <button (click)="delete(product.id)" class="delete">Eliminar</button>
+                    <div class="options">
+                        <button (click)="edit(product.id)" class="edit">Editar</button>
+                        <app-deleteproduct [id]="product.id" (delete)="onDelete($event)"></app-deleteproduct>
+                    </div>
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th scope="row" colspan="2">Número total de productos</th>
-                <td colspan="4">{{lenghtProducts}}</td>
+                <th scope="row" colspan="2">Número total de productos: {{lenghtProducts}}</th>
+                <!-- <th class="lenghtProducts" colspan="1">{{lenghtProducts}}</th> -->
             </tr>
         </tfoot>
     </table>
