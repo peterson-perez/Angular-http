@@ -1,0 +1,13 @@
+.menu{
+    text-align: center;
+}
+
+.menu, a{
+    color: rgb(0, 115, 255);
+    margin: 10px;
+    text-decoration: none;
+}
+
+.menu, a:hover{
+    color: grey;
+}
