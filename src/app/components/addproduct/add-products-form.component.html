@@ -1,18 +1,21 @@
-<p>Formulario de productos</p>
+<h2>Formulario de productos</h2>
 
-
-<div class="form-container">
-    <form class="formulary" [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
-        <label>Nombre del producto</label>
-        <input type="text" formControlName="name">
-        <label>Descricion</label>
-        <input type="text" formControlName="description">
-        <label>Categoria</label>
-        <input type="text" formControlName="category">
-        <label>Disponiblidad</label>
-        <input type="number" formControlName="stock">
-        <label>Precio</label>
-        <input type="number" formControlName="price">
-        <input type="submit" value="Agregar" class="button" />
-    </form>
+<div class="seccion">
+    <div class="form-container">
+        <form class="formulary" [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
+            <label class="text">Nombre del producto</label>
+            <input class="add-form-input" type="text" formControlName="name">
+            <label class="text">Descricion</label>
+            <input class="add-form-input" type="text" formControlName="description">
+            <label class="text">Categoria</label>
+            <input class="add-form-input" type="text" formControlName="category">
+            <label class="text">Disponiblidad</label>
+            <input class="add-form-input" type="number" formControlName="stock">
+            <label class="text">Precio</label>
+            <input class="add-form-input" type="number" formControlName="price">
+            <div class="button-container">
+                <input type="submit" value="Agregar" class="button" />
+            </div>
+        </form>
+    </div>
 </div>
