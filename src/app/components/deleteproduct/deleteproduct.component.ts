@@ -1,5 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import { ProductI } from 'src/app/Models/ModelProductInt';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ServiciosService } from 'src/app/servicios.service';
 
 @Component({
@@ -7,27 +6,20 @@ import { ServiciosService } from 'src/app/servicios.service';
   templateUrl: './deleteproduct.component.html',
   styleUrls: ['./deleteproduct.component.css']
 })
-
-@Injectable({providedIn: 'root'})
-
 export class DeleteproductComponent implements OnInit {
 
-  products: ProductI[] = [];
+  @Input() id?: number;
+  @Output() delete: EventEmitter<number> = new EventEmitter()
 
   constructor(private service: ServiciosService) { }
 
   ngOnInit(): void {
   }
 
-  deleteProduct(id: number) {
-    this.products.find((product) => {
-      if (product.id === id) {
-        this.service.deleteProduct(id).subscribe( data => {
-          this.products = this.products.filter(products => products.id != id)
-          return this.products   
-        })
-      }
-    })
-   }
+  deleteProduct() {
+    if (!this.id) return
+
+    this.service.deleteProduct(this.id).subscribe(() => this.delete.emit(this.id));
+  }
 
 }
