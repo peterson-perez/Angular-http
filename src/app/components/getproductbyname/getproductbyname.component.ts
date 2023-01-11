@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Product } from 'src/app/Models/ModelProduct';
+import { ProductI } from 'src/app/Models/ModelProductInt';
 import { ServiciosService } from 'src/app/servicios.service';
 
 
@@ -11,21 +11,20 @@ import { ServiciosService } from 'src/app/servicios.service';
 })
 export class GetproductbynameComponent implements OnInit {
 
-  products: Product[] = []
-
-  inputName = new FormGroup({
-    name: new FormControl('',Validators.required)
+  @Output() find: EventEmitter<ProductI> = new EventEmitter()
+  searchForm = new FormGroup({
+    name: new FormControl('', Validators.required)
   })
 
   constructor(private service: ServiciosService) { }
 
+
   ngOnInit(): void {
   }
 
-  search(name: any){
-     this.service.getProductsByName(name).subscribe( data => {
-      console.log(data)
-     })
+  search(name: string | null | undefined) {
+    if (!name) return
+    this.service.getProductsByName(name).subscribe(data => this.find.emit(data))
   }
 
 }
