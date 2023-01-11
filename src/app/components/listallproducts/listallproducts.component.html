@@ -25,7 +25,7 @@
                 <td (click)="watch(product.id)">{{product.category}}</td>
                 <td (click)="watch(product.id)">{{product.description}}</td>
                 <td (click)="watch(product.id)">{{product.stock}}</td>
-                <td (click)="watch(product.id)">{{product.price}}</td>
+                <td (click)="watch(product.id)">{{product.price | currency }}</td>
                 <td>
                     <div class="options">
                         <button (click)="edit(product.id)" class="edit">Editar</button>

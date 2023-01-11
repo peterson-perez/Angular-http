@@ -6,7 +6,7 @@
             <h3>Nombre: <strong>{{product.name}}</strong></h3>
             <h3>Descripcion: <strong>{{product.description}}</strong></h3>
             <h3>Categoria: <strong>{{product.category}}</strong></h3>
-            <h3>Precio: <strong>{{product.price}}</strong></h3>
+            <h3>Precio: <strong>{{product.price | currency}}</strong></h3>
             <form [formGroup]="editStock" (ngSubmit)="edit(editStock.value)">
                 <label>Disponibilidad</label>
                 <div class="funciones">
