@@ -1,0 +1,19 @@
+<h2 class="titulo">Detalles del producto</h2>
+
+<div class="ditails-container">
+    <div class="ditails">
+        <div class="seccion-1">
+            <h3>Nombre: <strong>{{product.name}}</strong></h3>
+            <h3>Descripcion: <strong>{{product.description}}</strong></h3>
+            <h3>Categoria: <strong>{{product.category}}</strong></h3>
+            <h3>Precio: <strong>{{product.price}}</strong></h3>
+            <form [formGroup]="editStock" (ngSubmit)="edit(editStock.value)">
+                <label>Disponibilidad</label>
+                <div class="funciones">
+                    <input type="number" formControlName="stock">
+                    <input type="submit" value="Editar" class="button">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
