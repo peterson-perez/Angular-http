@@ -1,4 +1,16 @@
+/* titulo */
+.titulo{
+    font-size: 30px;
+    text-align: center;
+}
 
+/* tabla */
+
+.seccion-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .table-container{
   display: flex;
@@ -18,7 +30,10 @@ table td {
     text-align: center;
 }
 
-
+/* .lenghtProducts{
+    color: black;
+    background-color: white;
+} */
 
 td th {
     margin: 3px;
@@ -30,12 +45,33 @@ th {
     background-color: rgb(0, 115, 255);
 }
 
+tr:hover{
+    background-color: #add8e6;
+}
+
+
+/* buttones */
+
 button {
     margin: 3px;
 }
 
-tr:hover{
-    background-color: #add8e6;
+.add-product{
+    margin: 20px;
+    background-color: hsl(210, 100%, 50%);
+    border: 1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+}  
+
+.add-product:hover{
+    color: white;
+}
+
+.options{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 .edit{
@@ -43,12 +79,9 @@ tr:hover{
     background-color: hsl(210, 100%, 50%);
     border: 1px solid;
     border-radius: 2px;
+    cursor: pointer;
 }
 
-.delete{
-    width: 63;
-    width: 63px;
-    /* background-color: hsl(210, 100%, 50%); */
-    border: 1px solid;
-    border-radius: 2px;
+.edit:hover{
+    color: white;
 }
