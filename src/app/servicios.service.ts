@@ -34,7 +34,7 @@ export class ServiciosService {
   // get Product id
 
   getproductId(id: number): Observable<ProductI>{
-    return this.http.get<ProductI>('/api/ProductId?id=' + id)
+    return this.http.get<ProductI>(`/api/ProductId?id=${id}`)
   }
 
   getProductsByName(name: any): Observable<ProductI>{
@@ -44,19 +44,19 @@ export class ServiciosService {
   // delete
 
   deleteProduct(id: number): Observable<string>{
-    return this.http.delete<string>('/api/ProductId?id=' + id)
+    return this.http.delete<string>(`/api/ProductId?id=${id}`)
   }
 
   //edit
   
   putProduct(id: number, form: EditProductI): Observable<ProductI>{
-    return this.http.put<ProductI>('/api/ProductId?id=' + id, form)
+    return this.http.put<ProductI>(`/api/ProductId?id=${id}`, form)
   }
 
   //EditStock
 
-  putProductStock(id: number, newStock: EditStockI): Observable<ProductI>{
-  return this.http.put<ProductI>('/ProductStock?id=' + id, '&newStock=' + newStock)
+  putProductStock(id: number, newStock: EditStockI): Observable<EditStockI>{
+  return this.http.put<EditStockI>('/ProductStock?id=' + id, '&newStock=' + newStock)
   }
 
 }

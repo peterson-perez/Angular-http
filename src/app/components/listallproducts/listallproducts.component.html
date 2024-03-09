@@ -26,18 +26,17 @@
                 <td (click)="watch(product.id)">{{product.description}}</td>
                 <td (click)="watch(product.id)">{{product.stock}}</td>
                 <td (click)="watch(product.id)">{{product.price | currency }}</td>
-                <td>
-                    <div class="options">
-                        <button (click)="edit(product.id)" class="edit">Editar</button>
-                        <app-deleteproduct [id]="product.id" (delete)="onDelete($event)"></app-deleteproduct>
-                    </div>
-                </td>
+            <td>
+                <div class="options">
+                    <button (click)="edit(product.id)" class="edit">Editar</button>
+                    <app-deleteproduct [id]="product.id" (delete)="onDelete($event)"></app-deleteproduct>
+                </div>
+            </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th scope="row" colspan="2">Número total de productos: {{lenghtProducts}}</th>
-                <!-- <th class="lenghtProducts" colspan="1">{{lenghtProducts}}</th> -->
             </tr>
         </tfoot>
     </table>

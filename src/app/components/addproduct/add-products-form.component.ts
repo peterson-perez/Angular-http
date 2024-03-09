@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiciosService } from 'src/app/servicios.service';
 
 
 @Component({
   selector: 'app-addproduct',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule
+  ],
   templateUrl: './add-products-form.component.html',
   styleUrls: ['./add-products-form.component.css']
 })

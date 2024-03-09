@@ -2,9 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductI } from 'src/app/Models/ModelProductInt';
 import { ServiciosService } from 'src/app/servicios.service';
+import { GetproductbynameComponent } from '../getproductbyname/getproductbyname.component';
+import { DeleteproductComponent } from '../deleteproduct/deleteproduct.component';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-listallproducts',
+  standalone: true,
+  imports: [
+    GetproductbynameComponent,
+    DeleteproductComponent,
+    CurrencyPipe,
+    CommonModule
+  ],
   templateUrl: './listallproducts.component.html',
   styleUrls: ['./listallproducts.component.css']
 })
